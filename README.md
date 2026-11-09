@@ -1,17 +1,30 @@
-# Simple Jest Coverage
+# Bank Contracts System (Homework 8)
 
-A TypeScript project with Jest for testing and code coverage. 
+TypeScript class hierarchy for bank contracts + Jest unit tests.
+
+- `BaseContract` — `contractId`, `clientName`, `isActive`, `activate()`, `deactivate()`
+- `DepositContract` — `amount`, `interestRate` (%), `calculateInterest()` = amount * interestRate / 100
+- `LoanContract` — `loanAmount`, `monthlyPayment`, `loanTermMonths`, `calculateTotalPayment()` = monthlyPayment * loanTermMonths
+- `InsuranceContract` — `insuranceType`, `premium` (yearly), `termYears`, `calculateTotalPremium()` = premium * termYears
+
+Tests use three approaches: simple (new instance in each test), `beforeEach`/`afterEach`, and `test.each` parameterization.
 
 ## Project Structure
 
 ```
 src/
-├── bank/
-│   └── bank.ts
+└── contracts/
+    ├── base-contract.ts
+    ├── deposit-contract.ts
+    ├── loan-contract.ts
+    └── insurance-contract.ts
 
 test/
-├── bank/
-│   └── bank.test.ts
+└── contracts/
+    ├── base-contract.test.ts
+    ├── deposit-contract.test.ts
+    ├── loan-contract.test.ts
+    └── insurance-contract.test.ts
 
 ```
 
